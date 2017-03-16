@@ -121,9 +121,50 @@ a {
 
 .toggle-effect{
     width: 60%;
-    height: 400px;
     margin:auto;
 }
+
+.toggle-button-hover{
+    width: 60%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+}
+
+.button-cd{
+    font-size: 35px;
+}
+
+.button-line{
+    width: 20%;
+    height: 2px;
+}
+
+.button-numbers{
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.button-numbers p{
+}
+
+.view-checklist{
+    width: 35%;
+    height: 100px;
+    margin:7% auto;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+
+
 
 /*----toggle switch----*/
 .switch {

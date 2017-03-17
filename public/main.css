@@ -24,6 +24,16 @@ body {
 
 a {
     text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    margin:0;
 }
 
 .container-section{
@@ -46,6 +56,52 @@ a {
     color: #fff;
     font-size: 18px;
     padding: 20px;
+    margin-right: 15px;
+}
+
+.navbar-name:hover{
+    background-color: #00A788;
+    color:#fff;
+}
+
+.navbar-name:hover .navbar-hidden{
+    display: block;
+}
+
+.arrow{
+    position: relative;
+    top: 4px;
+    left: 5px;
+}
+
+.navbar-hidden{
+    background-color: #fff;
+    height: 85px;
+    width: 250px;
+    position: absolute;
+    right: 15px;
+    top: 70px;
+    display: none;
+}
+
+.navbar-hidden span{
+    color: #E23F00;
+    font-size: 65px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.hidden-name{
+    display: inline-block;
+    color: #333;
+    position: relative;
+    top: -15px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+.hidden-name p{
+    font-size: 14px;
 }
 
 .menu{
@@ -77,10 +133,13 @@ a {
 }
 
 .sidebar-icon span{
-    color: #0A857A;
+    color: #f9f9f9;
     font-size: 30px;
     margin:20px 0;
+}
 
+.sidebar-icon span:active{
+    color: #0A857A;
 }
 
 .view{
@@ -99,24 +158,56 @@ a {
 
 .progress-animation{
     width: 60%;
-    height: 400px;
+    height: 200px;
     margin:auto;
     display: flex;
     align-items: center;
+    color: #0A857A;
+    /*-webkit-transition: color 2s;  For Safari 3.1 to 6.0 
+    transition: color 2s;*/
+}
+.progress-animation span:nth-child(1) {
+    -webkit-animation: coloreffect 1s infinite 1s;
+    animation: coloreffect 1s infinite 1s;
+
+}
+.progress-animation span:nth-child(2) {
+    -webkit-animation: coloreffect 0.5s infinite 2s;
+    animation: coloreffect 0.5s infinite 2s;
+}
+.progress-animation span:nth-child(3) {
+    -webkit-animation: coloreffect 1s infinite 2.5s;
+    animation: coloreffect 1s infinite 2.5s;
+}
+.progress-animation span:nth-child(4) {
+    -webkit-animation: coloreffect 0.5s infinite 3.5s;
+    animation: coloreffect 0.5s infinite 3.5s;
+}
+.progress-animation span:nth-child(5) {
+    -webkit-animation: coloreffect 1s infinite 4s;
+    animation: coloreffect 1s infinite 4s;
+}
+
+@-webkit-keyframes coloreffect {
+    0%   {color: #F84D61;}
+    100% {color: #F84D61;}
+}
+@keyframes coloreffect {
+    0%   {color: #F84D61;}
+    100% {color: #F84D61;}
 }
 
 .progress-icon{
     font-size: 30px;
-    color: #0A857A;
     border-radius: 50%;
-    border:2px solid #0A857A;
+    border:2px solid;
     padding: 20px;
 }
 
 .horizontal-line{
     width: 35%;
     height: 2px;
-    background-color: #0A857A;
+    background-color: currentColor;
 }
 
 .toggle-effect{
@@ -125,7 +216,7 @@ a {
 }
 
 .toggle-button-hover{
-    width: 60%;
+    width: 70%;
     margin:auto;
     display: flex;
     align-items: center;
@@ -133,6 +224,13 @@ a {
 
 .button-cd{
     font-size: 35px;
+    transition: 0.2s;
+}
+
+.button-cd:hover{
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari */
+    transform: scale(1.5);
 }
 
 .button-line{
@@ -141,27 +239,61 @@ a {
 }
 
 .button-numbers{
-    width: 60%;
+    width: 70%;
     margin: 20px auto;
     display: flex;
     justify-content: space-between; 
 }
 
-.button-numbers p{
-}
-
 .view-checklist{
-    width: 35%;
-    height: 100px;
+    width: 90%;
+    max-width: 450px;
     margin:7% auto;
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 15px;
+    padding: 20px 20px 40px 20px;
 }
 
+.checklist{
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+}
 
+.checklist-para{
+    display: inline-block;
+    width: 55%;
+}
 
+.checklist:hover .checklist-para{
+    background-color: #00C59C;
+    color: #fff;
+}
 
+.glyph-icon-box .glyphicon:hover{
+    background-color: #00C59C;
+    color: #fff;
+}
 
+.checklist:hover .glyph-icon-box {
+    color: #00C59C;
+}
+
+.checklist:active .checklist-para{
+    color:yellow;
+    background-color: #fff;
+}
+
+.checklist:active .glyph-icon-box {
+    color: yellow;
+}
+
+.glyph-icon-box{
+    display: inline-block;
+}
+
+.glyph-icon-box span{
+    padding:12px;
+}
 
 
 
@@ -224,3 +356,92 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+
+/*---meadia query------*/
+@media screen and (max-width: 590px) {
+    .progress-animation{
+        transform: rotate(90deg);
+    }
+    .horizontal-line{
+
+    }
+    .progress-icon{
+        transform: rotate(-90deg);
+        font-size: 15px;
+        padding: 10px;
+    }
+    .para-icon{
+        width:55%;
+    }
+    .checklist-para{
+        width: 40%;
+    }
+    .navbar-hidden{
+        width: 200px;
+        height: auto;
+    }
+    .navbar-hidden span{
+        font-size: 35px;
+    }
+    .hidden-name{
+        top:0;
+    }
+    .toggle-button-hover{
+        transform: rotate(90deg);
+        width: 100%;
+    }
+    .button-numbers{
+        display: inline-block;
+    }
+    .toggle-container{
+        display: flex;
+    }
+    .button-numbers p{
+        padding: 10% 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .checklist-para{
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+    .view-checklist{
+        text-align: center;
+        width: 70%;
+    }
+    .toggle-button-hover{
+        width: 100%;
+    }
+    .button-numbers p{
+        padding: 8% 0;
+    }
+}
+@media screen and (max-width: 450px){
+    .glyph-icon-box span{
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+    .checklist-para{
+        font-size: 13px;
+    }
+    .button-cd{
+        font-size: 20px;
+    }
+    .button-numbers p{
+        padding: 5% 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
